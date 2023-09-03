@@ -6,8 +6,8 @@ use App\Factory\ValidatorFactory;
 
 require_once('vendor/autoload.php');
 
-
 try {
+    
     /**
      * [
      *  "type" => "json | text | html | ...",
