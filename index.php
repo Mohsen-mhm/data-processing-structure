@@ -23,15 +23,15 @@ try {
     $type = $input['type'];
     $data = $input['data'];
 
-    $validator = ValidatorFactory::createValidator($type);
+    $validator = ValidatorFactory::createValidator($type); // Data format detection and validation data based on it
 
     if ($validator->validate($data)) {
-        $parser = ParserFactory::createParser($type);
+        $parser = ParserFactory::createParser($type); // Data format detection and parsing data based on it
         $parsedData = $parser->parse($data);
 
-        $renderer = RendererFactory::createRenderer($type);
+        $renderer = RendererFactory::createRenderer($type); // Data format detection and rendering data based on it
 
-        $renderedData = [
+        $renderedData = [ // Specify the output format
             'type' => $type,
             'value' => $renderer->render($parsedData)
         ];
